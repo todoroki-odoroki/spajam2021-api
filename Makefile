@@ -10,4 +10,10 @@ update:
 
 .PHONY: lint
 lint:
-	poetry run pre-commit run --all-files
+	poetry run flake8 .
+
+format:
+	poerty run black .
+
+sort:
+	poetry run sort .
