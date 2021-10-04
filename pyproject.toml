@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "spajam-api-2021"
+version = "0.1.0"
+description = ""
+authors = ["HideBa <baba.papa1120.ba@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.68.1"
+uvicorn = {extras = ["standard"], version = "^0.15.0" }
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
