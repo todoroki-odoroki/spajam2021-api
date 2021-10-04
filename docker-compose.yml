@@ -9,4 +9,4 @@ services:
       - "8000:8000"
     volumes:
       - ./app:/app/app
-    command: ["poetry", "run", "uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0"]
+    command: ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0"]
