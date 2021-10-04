@@ -9,3 +9,8 @@ To run server
 ```
 poetry run uvicorn app.main:app --reload
 ```
+
+To run shell on venv
+```
+poetry shell
+```
