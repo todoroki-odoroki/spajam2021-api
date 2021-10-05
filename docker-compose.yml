@@ -3,10 +3,23 @@ services:
   app:
     build:
       context: .
-    # dependes_on:
-    #   - db
+    depends_on:
+      - db
     ports:
       - "8000:8000"
     volumes:
       - ./app:/app/app
     command: ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0"]
+  db:
+    image: postgres
+    ports:
+      - '5432:5432'
+    env_file:
+      - .env
+    environment:
+      PGDATA: /pgdata
+      POSTGRES_DB: todoroki-db
+      POSTGRES_USER: todoroki
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./pgdata:/pgdata
