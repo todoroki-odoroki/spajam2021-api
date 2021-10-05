@@ -8,6 +8,7 @@ authors = ["HideBa <baba.papa1120.ba@gmail.com>"]
 python = "^3.9"
 fastapi = "^0.68.1"
 uvicorn = {extras = ["standard"], version = "^0.15.0" }
+pydantic = "^1.8.2"
 
 [tool.poetry.dev-dependencies]
 black = "^21.9b0"
@@ -16,6 +17,7 @@ mypy = "^0.910"
 pytest = "^6.2.5"
 isort = "^5.9.3"
 pre-commit = "^2.15.0"
+bandit = "^1.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
