@@ -23,3 +23,6 @@ run-db:
 
 run-app:
 	docker-compose up -d
+
+run-app-host:
+	poetry run uvicorn app.main:app --reload
