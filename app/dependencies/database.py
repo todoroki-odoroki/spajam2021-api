@@ -1,6 +1,7 @@
-from app.core.config import DB_NAME, DB_HOST, DB_PASS, DB_USER
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
+from app.core.config import DB_HOST, DB_NAME, DB_PASS, DB_USER
 
 
 def get_db_url() -> str:

@@ -1,4 +1,5 @@
 from typing import List
+
 from starlette.config import Config
 from starlette.datastructures import CommaSeparatedStrings, Secret
 
@@ -32,3 +33,4 @@ AWS_ACCESS_KEY_ID: str = config("AWS_ACCESS_KEY_ID", default="")
 AWS_SECRET_ACCESS_KEY: str = config("AWS_SECRET_ACCESS_KEY", default="")
 AWS_REGION: str = config("AWS_REGION", default="us-east-1")
 AWS_BUCKET_NAME: str = config("AWS_BUCKET_NAME", default="spajam2021")
+AWS_REKOGNITION_MODEL: str = config("AWS_REKOGNITION_MODEL", default="")
