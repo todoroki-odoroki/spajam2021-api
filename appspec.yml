@@ -4,3 +4,6 @@ Resources:
       Type: AWS::ECS::Service
       Properties:
         TaskDefinition: "<TASK_DEFINITION>"
+        LoadBalancerInfo:
+            ContainerName: "spajam-2021"
+            ContainerPort: 80
