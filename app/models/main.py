@@ -8,20 +8,18 @@ Base = declarative_base()
 
 
 class BaseModel(Base):
-    """base model
-    """
+    """base model"""
+
     __abstract__ = True
 
-    id = Column(
-        INTEGER, primary_key=True, autoincrement=True
-    )
+    id = Column(INTEGER, primary_key=True, autoincrement=True)
 
     created_at = Column(
         "created_at",
         TIMESTAMP(timezone=True),
         server_default=current_timestamp(),
         nullable=False,
-        comment="created at"
+        comment="created at",
     )
 
     updated_at = Column(
@@ -29,7 +27,7 @@ class BaseModel(Base):
         TIMESTAMP(timezone=True),
         server_default=current_timestamp(),
         nullable=False,
-        comment="updated at"
+        comment="updated at",
     )
 
     @declared_attr

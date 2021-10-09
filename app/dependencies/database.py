@@ -7,8 +7,6 @@ def get_db_url() -> str:
     return f"postgresql+psycopg2::{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}"
 
 
-engine = create_engine(
-    get_db_url()
-)
+engine = create_engine(get_db_url())
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

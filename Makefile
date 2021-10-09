@@ -17,3 +17,9 @@ format:
 
 sort:
 	poetry run sort .
+
+run-db:
+	docker-compose up -d db
+
+run-app:
+	docker-compose up -d
