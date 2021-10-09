@@ -1,5 +1,6 @@
 import datetime
 from fastapi import APIRouter, File, UploadFile
+import os
 
 from app.core.config import (
     AWS_BUCKET_NAME,
