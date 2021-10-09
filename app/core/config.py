@@ -6,7 +6,7 @@ config = Config(".env")
 
 DEBUG: bool = config("DEBUG", cast=bool, default=False)
 
-DATABASE_URL: str = config("DB_CONNECTION")
+DATABASE_URL: str = config("DB_CONNECTION", default="")
 DB_USER: str = config("DB_USER", default="todoroki")
 DB_NAME: str = config("DB_NAME", default="todoroki-db")
 DB_PASS: str = config("DB_PASS", default="password")
