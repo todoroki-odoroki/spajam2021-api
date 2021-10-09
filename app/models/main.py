@@ -1,8 +1,7 @@
-from sqlalchemy.ext.declarative import declarative_base, declared_attr
 from sqlalchemy import Column
+from sqlalchemy.ext.declarative import declarative_base, declared_attr
 from sqlalchemy.sql.functions import current_timestamp
 from sqlalchemy.sql.sqltypes import INTEGER, TIMESTAMP
-
 
 Base = declarative_base()
 

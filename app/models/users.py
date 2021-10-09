@@ -1,5 +1,6 @@
 from sqlalchemy import Column
 from sqlalchemy.sql.sqltypes import TEXT
+
 from app.models.main import BaseModel
 
 
