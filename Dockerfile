@@ -49,7 +49,8 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-ARG PORT=8000
-ENV PORT=${PORT}
+ARG PORT=80
+ENV PORT=$PORT
+EXPOSE $PORT
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"]
