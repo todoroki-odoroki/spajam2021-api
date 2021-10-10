@@ -1,7 +1,11 @@
+import logging
 from typing import List
 
+from loguru import logger
+import sys
 from starlette.config import Config
 from starlette.datastructures import CommaSeparatedStrings, Secret
+from app.core.logging import InterceptHandler
 
 config = Config(".env")
 
@@ -34,3 +38,14 @@ AWS_SECRET_ACCESS_KEY: str = config("AWS_SECRET_ACCESS_KEY", default="")
 AWS_REGION: str = config("AWS_REGION", default="us-east-1")
 AWS_BUCKET_NAME: str = config("AWS_BUCKET_NAME", default="spajam2021")
 AWS_REKOGNITION_MODEL: str = config("AWS_REKOGNITION_MODEL", default="")
+
+
+# *****Logging*****
+LOGGING_LEVEL = logging.DEBUG if DEBUG else logging.INFO
+LOGGERS = ("uvicorn.asgi", "uvicorn.access")
+logging.getLogger().handlers = [InterceptHandler()]
+for logger_name in LOGGERS:
+    logging_logger = logging.getLogger(logger_name)
+    logging_logger.handlers = [InterceptHandler(level=LOGGING_LEVEL)]
+
+logger.configure(handlers=[{"sink": sys.stderr, "level": LOGGING_LEVEL}])
