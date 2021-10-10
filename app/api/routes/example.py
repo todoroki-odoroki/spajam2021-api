@@ -1,6 +1,7 @@
-from app.schemas.users import UserInfo
 from fastapi import APIRouter
 from starlette.status import HTTP_400_BAD_REQUEST
+
+from app.schemas.users import UserInfo
 
 router = APIRouter()
 

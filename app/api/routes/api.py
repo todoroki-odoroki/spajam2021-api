@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 
-from app.api.routes import example
-from app.api.routes import files
+from app.api.routes import example, files
 
 router = APIRouter()
 router.include_router(example.router, tags=["example"], prefix="/examples")
